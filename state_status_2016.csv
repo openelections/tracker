@@ -1,0 +1,52 @@
+State,Abbreviation,general county,general precinct,primary county ,primary precinct
+Alabama,AL,,working,,
+Alaska,AK,,CSV,,
+Arizona,AZ,,CSV,,
+Arkansas,AR,,CSV,,
+California,CA,,CSV,,
+Colorado,CO,CSV,CSV,,
+Connecticut,CT,,CSV,CSV,
+Delaware,DE,,CSV,,
+District of Columbia,DC,CSV,CSV,,
+Florida,FL,Baked raw,Baked raw,Baked raw,Baked raw
+Georgia,GA,CSV,CSV,CSV,CSV
+Hawaii,HI,,CSV,,
+Idaho,ID,working,working,working,working
+Illinois,IL,,CSV,,
+Indiana,IN,,working,CSV,
+Iowa,IA,,CSV,,CSV
+Kansas,KS,,CSV,,
+Kentucky,KY,,CSV,,
+Louisiana,LA,,working,,
+Maine,ME,,CSV,,
+Montana,MT,,CSV,,CSV
+Nebraska,NE,,working,,
+Nevada,NV,,CSV,,
+New Hampshire,NH,,working,,
+New Jersey,NJ,CSV,working,CSV,
+New Mexico,NM,,CSV,,CSV
+New York,NY,CSV,CSV,,
+North Carolina,NC,Baked raw,Baked raw,Baked raw,Baked raw
+North Dakota,ND,,working,,
+Ohio,OH,CSV,CSV,,CSV
+Oklahoma,OK,,CSV,,
+Oregon,OR,CSV,Baked raw,,Baked raw
+Maryland,MD,Baked raw,Baked raw,Baked raw,Baked raw
+Massachusetts,MA,CSV,working,,
+Michigan,MI,,working,,
+Minnesota,MN,,CSV,,CSV
+Mississippi,MS,CSV,working,CSV,
+Missouri,MO,CSV,CSV,,
+Pennsylvania,PA,,CSV,,CSV
+Rhode Island,RI,,CSV,,
+South Carolina,SC,,CSV,,
+South Dakota,SD,,working,,
+Tennessee,TN,CSV,CSV,,
+Texas,TX,,working,,
+Utah,UT,,CSV,,
+Vermont,VT,CSV,working,,
+Virginia,VA,,Baked raw,,Baked raw
+Washington,WA,CSV,CSV,,
+West Virginia,WV,,working,,
+Wisconsin,WI,,CSV,,CSV
+Wyoming,WY,,working,,
