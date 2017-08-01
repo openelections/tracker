@@ -1,5 +1,5 @@
 state,abbreviation,general county,general precinct,primary county ,primary precinct
-Alabama,AL,working,working,,
+Alabama,AL,CSV,working,,
 Alaska,AK,,CSV,,
 Arizona,AZ,,CSV,,
 Arkansas,AR,,CSV,,
@@ -24,7 +24,7 @@ Nebraska,NE,,working,,
 Nevada,NV,,CSV,,
 New Hampshire,NH,,working,,
 New Jersey,NJ,CSV,working,CSV,
-New Mexico,NM,,CSV,,CSV
+New Mexico,NM,CSV,CSV,CSV,CSV
 New York,NY,CSV,CSV,,
 North Carolina,NC,Baked raw,Baked raw,Baked raw,Baked raw
 North Dakota,ND,,working,,
