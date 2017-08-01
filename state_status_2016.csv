@@ -13,7 +13,7 @@ Georgia,GA,CSV,CSV,CSV,CSV
 Hawaii,HI,,CSV,,
 Idaho,ID,working,working,working,working
 Illinois,IL,,CSV,,
-Indiana,IN,,working,CSV,
+Indiana,IN,CSV,working,CSV,
 Iowa,IA,,CSV,,CSV
 Kansas,KS,,CSV,,
 Kentucky,KY,,CSV,,
@@ -36,7 +36,7 @@ Massachusetts,MA,CSV,working,,
 Michigan,MI,,working,,
 Minnesota,MN,,CSV,,CSV
 Mississippi,MS,CSV,working,CSV,
-Missouri,MO,CSV,CSV,,
+Missouri,MO,,CSV,,
 Pennsylvania,PA,,CSV,,CSV
 Rhode Island,RI,,CSV,,
 South Carolina,SC,,CSV,,
