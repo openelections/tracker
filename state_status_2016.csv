@@ -1,52 +1,52 @@
-state,abbreviation,general county,general precinct,primary county ,primary precinct
-Alabama,AL,CSV,working,,
-Alaska,AK,,CSV,,
-Arizona,AZ,,CSV,,
-Arkansas,AR,,CSV,,
-California,CA,,CSV,,
-Colorado,CO,CSV,CSV,,
-Connecticut,CT,,CSV,CSV,
-Delaware,DE,,CSV,,
-District of Columbia,DC,CSV,CSV,,
-Florida,FL,Baked raw,Baked raw,Baked raw,Baked raw
-Georgia,GA,CSV,CSV,CSV,CSV
-Hawaii,HI,,CSV,,
-Idaho,ID,working,working,working,working
-Illinois,IL,,CSV,,
-Indiana,IN,CSV,working,CSV,
-Iowa,IA,,CSV,,CSV
-Kansas,KS,,CSV,,
-Kentucky,KY,,CSV,,
-Louisiana,LA,,working,,
-Maine,ME,,CSV,,
-Montana,MT,,CSV,,CSV
-Nebraska,NE,,working,,
-Nevada,NV,,CSV,,
-New Hampshire,NH,,working,,
-New Jersey,NJ,CSV,working,CSV,
-New Mexico,NM,CSV,CSV,CSV,CSV
-New York,NY,CSV,CSV,,
-North Carolina,NC,Baked raw,Baked raw,Baked raw,Baked raw
-North Dakota,ND,,working,,
-Ohio,OH,CSV,CSV,,CSV
-Oklahoma,OK,,CSV,,
-Oregon,OR,CSV,Baked raw,,Baked raw
-Maryland,MD,Baked raw,Baked raw,Baked raw,Baked raw
-Massachusetts,MA,CSV,working,,
-Michigan,MI,,working,,
-Minnesota,MN,,CSV,,CSV
-Mississippi,MS,CSV,working,CSV,
-Missouri,MO,,CSV,,
-Pennsylvania,PA,,CSV,,CSV
-Rhode Island,RI,,CSV,,
-South Carolina,SC,,CSV,,
-South Dakota,SD,,working,,
-Tennessee,TN,CSV,CSV,,
-Texas,TX,,working,,
-Utah,UT,,CSV,,
-Vermont,VT,CSV,working,,
-Virginia,VA,,Baked raw,,Baked raw
-Washington,WA,CSV,CSV,,
-West Virginia,WV,,working,,
-Wisconsin,WI,,CSV,,CSV
-Wyoming,WY,,working,,
+state,abbreviation,president county,general county,general precinct,primary county ,primary precinct
+Alabama,AL,CSV,CSV,working,,
+Alaska,AK,,,CSV,,
+Arizona,AZ,CSV,,CSV,,
+Arkansas,AR,CSV,,CSV,,
+California,CA,CSV,,CSV,,
+Colorado,CO,CSV,CSV,CSV,,
+Connecticut,CT,CSV town,,CSV,CSV,
+Delaware,DE,CSV,,CSV,,
+District of Columbia,DC,CSV,CSV,CSV,,
+Florida,FL,CSV,Baked raw,Baked raw,Baked raw,Baked raw
+Georgia,GA,CSV,CSV,CSV,CSV,CSV
+Hawaii,HI,CSV,,CSV,,
+Idaho,ID,CSV,working,working,working,working
+Illinois,IL,CSV,,CSV,,
+Indiana,IN,CSV,CSV,working,CSV,
+Iowa,IA,CSV,,CSV,,CSV
+Kansas,KS,CSV,,CSV,,
+Kentucky,KY,CSV,,CSV,,
+Louisiana,LA,CSV,,working,,
+Maine,ME,CSV,,CSV,,
+Montana,MT,CSV,,CSV,,CSV
+Nebraska,NE,CSV,,working,,
+Nevada,NV,CSV,,CSV,,
+New Hampshire,NH,CSV town,,working,,
+New Jersey,NJ,CSV,CSV,working,CSV,
+New Mexico,NM,CSV,CSV,CSV,CSV,CSV
+New York,NY,CSV,CSV,CSV,,
+North Carolina,NC,CSV,Baked raw,Baked raw,Baked raw,Baked raw
+North Dakota,ND,CSV,,working,,
+Ohio,OH,CSV,CSV,CSV,,CSV
+Oklahoma,OK,CSV,,CSV,,
+Oregon,OR,CSV,CSV,Baked raw,,Baked raw
+Maryland,MD,CSV,Baked raw,Baked raw,Baked raw,Baked raw
+Massachusetts,MA,CSV town,CSV,working,,
+Michigan,MI,CSV,,working,,
+Minnesota,MN,CSV,,CSV,,CSV
+Mississippi,MS,CSV,CSV,working,CSV,
+Missouri,MO,CSV,,CSV,,
+Pennsylvania,PA,CSV,,CSV,,CSV
+Rhode Island,RI,CSV town,CSV,CSV,,
+South Carolina,SC,CSV,,CSV,,
+South Dakota,SD,CSV,,working,,
+Tennessee,TN,CSV,CSV,CSV,,
+Texas,TX,CSV,,working,,
+Utah,UT,CSV,,CSV,,
+Vermont,VT,CSV town,CSV,working,,
+Virginia,VA,CSV,,Baked raw,,Baked raw
+Washington,WA,CSV,CSV,CSV,,
+West Virginia,WV,CSV,,working,,
+Wisconsin,WI,CSV,,CSV,,CSV
+Wyoming,WY,CSV,,working,,
