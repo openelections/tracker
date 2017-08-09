@@ -17,7 +17,7 @@ Indiana,IN,CSV,CSV,working,CSV,
 Iowa,IA,CSV,,CSV,,CSV
 Kansas,KS,CSV,,CSV,,
 Kentucky,KY,CSV,CSV,CSV,,
-Louisiana,LA,CSV,CSV,working,,
+Louisiana,LA,CSV,CSV,CSV,,
 Maine,ME,CSV town,,CSV,,
 Montana,MT,CSV,CSV,CSV,,CSV
 Nebraska,NE,CSV,CSV,CSV,,
@@ -27,7 +27,7 @@ New Jersey,NJ,CSV,CSV,working,CSV,
 New Mexico,NM,CSV,CSV,CSV,CSV,CSV
 New York,NY,CSV,CSV,CSV,,
 North Carolina,NC,CSV,Baked raw,Baked raw,Baked raw,Baked raw
-North Dakota,ND,CSV,CSV,CSV,,
+North Dakota,ND,CSV,CSV,CSV,CSV,CSV
 Ohio,OH,CSV,CSV,CSV,,CSV
 Oklahoma,OK,CSV,CSV,CSV,,
 Oregon,OR,CSV,CSV,Baked raw,,Baked raw
@@ -41,7 +41,7 @@ Pennsylvania,PA,CSV,,CSV,,CSV
 Rhode Island,RI,CSV town,CSV,CSV,,
 South Carolina,SC,CSV,,CSV,,
 South Dakota,SD,CSV,,working,,
-Tennessee,TN,CSV,CSV,CSV,,
+Tennessee,TN,CSV,CSV,CSV,CSV,CSV
 Texas,TX,CSV,CSV,working,,
 Utah,UT,CSV,,CSV,,
 Vermont,VT,CSV town,CSV,working,,
