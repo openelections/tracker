@@ -35,7 +35,7 @@ Maryland,MD,CSV,Baked raw,Baked raw,Baked raw,Baked raw
 Massachusetts,MA,CSV town,CSV,working,,
 Michigan,MI,CSV,CSV,CSV,CSV,
 Minnesota,MN,CSV,,CSV,,CSV
-Mississippi,MS,CSV,CSV,working,CSV,
+Mississippi,MS,CSV,CSV,CSV,CSV,
 Missouri,MO,CSV,,CSV,,
 Pennsylvania,PA,CSV,,CSV,,CSV
 Rhode Island,RI,CSV town,CSV,CSV,,
@@ -44,7 +44,7 @@ South Dakota,SD,CSV,,working,,
 Tennessee,TN,CSV,CSV,CSV,CSV,CSV
 Texas,TX,CSV,CSV,working,,
 Utah,UT,CSV,,CSV,,
-Vermont,VT,CSV town,CSV,working,,
+Vermont,VT,CSV town,CSV,CSV,,CSV
 Virginia,VA,CSV,,Baked raw,,Baked raw
 Washington,WA,CSV,CSV,CSV,,
 West Virginia,WV,CSV,CSV,working,CSV,
