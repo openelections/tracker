@@ -27,7 +27,7 @@ lint:
 	flake8 tracker tests
 
 test:
-	py.test
+	pipenv run py.test -v --capture=sys
 
 install: clean
 	python setup.py install
