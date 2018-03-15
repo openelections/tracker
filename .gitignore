@@ -1,0 +1,7 @@
+*.pyc
+*.vim
+.env
+.pytest_cache
+.python-version
+data/
+!data/state_status_2016.csv
