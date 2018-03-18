@@ -2,13 +2,23 @@ import csv
 import pathlib
 import os
 
+
+from tracker.utils import camel_to_snakecase
+
 class BaseReport:
 
-    def __init__(self, outfile, data):
-        self.outfile = outfile
-        self.outdir = os.path.dirname(self.outfile)
+    custom_name = None
+
+    def __init__(self, outdir, data):
+        self.outdir = outdir
+        self.outfile = os.path.join(outdir, self.name)
         self.data = self._prepare_data(data)
         self.headers = self._headers(self.data)
+
+    @property
+    def name(self):
+        base_name = self.custom_name or camel_to_snakecase(self.__class__.__name__)
+        return "{}.csv".format(base_name)
 
     def write(self):
         pathlib.Path(self.outdir).mkdir(parents=True, exist_ok=True)
