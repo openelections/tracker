@@ -9,7 +9,7 @@ class OpenElections:
         self.github = Github(personal_access_token)
         self.openelex = self.github.get_organization('openelections')
 
-    def compile_repos(self):
+    def repos_report(self):
         repos = []
         for repo in self.repos():
             payload = {
@@ -24,6 +24,11 @@ class OpenElections:
                 payload.update({'repo_type': repo_type, 'state': state.upper()})
             repos.append(payload)
         return repos
+
+    def tickets_report(self):
+        tickets = []
+        for repo in self.repos():
+            pass
 
     def repos(self,):
         return [repo for repo in self.openelex.get_repos()]
