@@ -8,7 +8,7 @@ from tracker.github.openelections import OpenElections
 from tracker import reports
 
 
-def main():
+def main(args):
     try:
         gh_token = os.environ['GITHUB_PERSONAL_ACCESS_TOKEN']
     except KeyError:
@@ -17,7 +17,7 @@ def main():
         print(err_msg)
         sys.exit()
     parser = get_parser()
-    parsed = parser.parse_args()
+    parsed = parser.parse_args(args)
     openelex = OpenElections(gh_token)
     for cmd, status in vars(parsed).items():
         if is_report(cmd) and status == True:
@@ -55,4 +55,4 @@ def get_report_kls(cmd):
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1:])
