@@ -20,13 +20,13 @@ setup(
     ],
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['pygithub'],
+    install_requires=['github3.py'],
     entry_points={
         'console_scripts': [
             'openelex-tracker=tracker.cli:main',
         ],
     },
     test_suite='tests',
-    tests_require=['pytest', 'pytest-mock'],
+    tests_require=['betamax','pytest', 'pytest-mock'],
     zip_safe=False,
 )
