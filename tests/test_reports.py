@@ -13,7 +13,6 @@ class CustomizedReport(BaseReport):
 def sample_data():
     return [{'foo': 'bar'}]
 
-
 def test_default_report_name(sample_data):
     "Report output file names are derived from report class by default"
     default_report = DefaultReport('/tmp/openelections', sample_data)

@@ -1,13 +1,13 @@
 import re
 
-from github import Github
+from github3 import GitHub
 
 
 class OpenElections:
 
-    def __init__(self, personal_access_token):
-        self.github = Github(personal_access_token)
-        self.openelex = self.github.get_organization('openelections')
+    def __init__(self):
+        self.github = GitHub()
+        self.openelex = self.github.organization('openelections')
 
     def repos_report(self):
         repos = []
@@ -31,5 +31,5 @@ class OpenElections:
             pass
 
     def repos(self,):
-        return [repo for repo in self.openelex.get_repos()]
+        return [repo for repo in self.openelex.repositories()]
 

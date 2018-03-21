@@ -8,17 +8,10 @@ from tracker.github.openelections import OpenElections
 from tracker import reports
 
 
-def main(args):
-    try:
-        gh_token = os.environ['GITHUB_PERSONAL_ACCESS_TOKEN']
-    except KeyError:
-        err_msg = "You must create a Github personal access token and "\
-        "store it in the env variable GITHUB_PERSONAL_ACCESS_TOKEN"
-        print(err_msg)
-        sys.exit()
+def main():
     parser = get_parser()
-    parsed = parser.parse_args(args)
-    openelex = OpenElections(gh_token)
+    parsed = parser.parse_args()
+    openelex = OpenElections()
     for cmd, status in vars(parsed).items():
         if is_report(cmd) and status == True:
             print("Running --{}...".format(cmd.replace('_','-')))
@@ -55,4 +48,4 @@ def get_report_kls(cmd):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main()
