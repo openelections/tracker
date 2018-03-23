@@ -9,18 +9,19 @@ from tracker import reports
 
 
 def main():
-    parser = get_parser()
-    parsed = parser.parse_args()
+    parsed = get_parsed_args()
+    publish_status = parsed.pop('publish')
+    outdir = parsed.pop('outdir')
     openelex = OpenElections()
-    for cmd, status in vars(parsed).items():
+    for cmd, status in parsed.items():
         if is_report(cmd) and status == True:
             print("Running --{}...".format(cmd.replace('_','-')))
             data = getattr(openelex, cmd)()
             report_kls = get_report_kls(cmd)
-            report = report_kls(parsed.outdir, data)
-            report.write()
+            report = report_kls(outdir, data)
+            report.write(publish_status)
 
-def get_parser():
+def get_parsed_args():
     parser = argparse.ArgumentParser(
         description='Generate raw material for stats on OpenElections.',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
@@ -37,7 +38,11 @@ def get_parser():
         default='/tmp/openelections/tracker',
         help='Output directory where CSVs or reports will be written'
     )
-    return parser
+    parser.add_argument('--publish',
+        action='store_true',
+        help='Publish report to S3'
+    )
+    return vars(parser.parse_args())
 
 def is_report(cmd):
     return 'report' in cmd
