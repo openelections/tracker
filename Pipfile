@@ -7,12 +7,14 @@ name = "pypi"
 
 [packages]
 
+boto3 = "*"
 pyodbc = "*"
 "github3.py" = "*"
 
 
 [dev-packages]
 
+betamax = "*"
 
 
 [requires]
