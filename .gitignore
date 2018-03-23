@@ -6,3 +6,6 @@
 build/
 data/
 !data/state_status_2016.csv
+*.png
+*.pstats
+*.dot
