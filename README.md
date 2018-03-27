@@ -34,6 +34,7 @@ make install
 
 ```
 # ~/.aws/credentials
+[openelex]
 aws_access_key_id = <ACCESS_KEY_ID>
 aws_secret_access_key = <SECRET_ACCESS_KEY>
 ```
