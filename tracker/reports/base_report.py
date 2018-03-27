@@ -1,7 +1,9 @@
 import csv
 import pathlib
 import os
+import sys
 
+import botocore
 import boto3
 
 from tracker.utils import camel_to_snakecase
@@ -33,13 +35,25 @@ class BaseReport:
             self.publish(self.outfile)
 
     def publish(self, outfile):
-        bucket = 'openelections-tracker'
-        obj_key  = os.path.basename(outfile)
-        s3_url = "https://s3.amazonaws.com/{}/{}".format(bucket, obj_key)
-        s3 = boto3.resource('s3')
-        obj = s3.Object(bucket, obj_key)
-        obj.upload_file(outfile, ExtraArgs={'ACL':'public-read'})
-        print("Published to {}".format(s3_url))
+        try:
+            session = boto3.Session(profile_name='openelex')
+            s3 = session.resource('s3')
+        except botocore.exceptions.ProfileNotFound:
+            s3 = boto3.resource('s3')
+        try:
+            bucket = 'openelections-tracker'
+            obj_key  = os.path.basename(outfile)
+            s3_url = "https://s3.amazonaws.com/{}/{}".format(bucket, obj_key)
+            obj = s3.Object(bucket, obj_key)
+            obj.upload_file(outfile, ExtraArgs={'ACL':'public-read'})
+            print("Published to {}".format(s3_url))
+        except (botocore.exceptions.ClientError, boto3.exceptions.S3UploadFailedError):
+            msg = "ERROR: Failed to upload file to S3 (access denied)!\nPlease ensure you do one of the following:\n" \
+            "\t* Create an AWS credentials profile called 'openelex'\n" \
+            "\t* Set your default credentials to those for OpenElections\n" \
+            "\t* Supply AWS_PROFILE=<profile_name> env variable when involking --publish\n" \
+            "For more details, see http://boto3.readthedocs.io/en/latest/guide/configuration.html#shared-credentials-file"
+            sys.exit(msg)
 
     def _prepare_data(self, data):
         "Customize data in subclasses as necessary"
