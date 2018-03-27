@@ -20,16 +20,22 @@ Metrics on Github activity, repo creation, etc. are also fair game...
 ## Install
 
 * Install Python 3.6 
-* [Create a Github personal access
-  token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
-* Add Github access token to `.bashrc` or `.bash_profile`: `GITHUB_PERSONAL_ACCESS_TOKEN=<TOKEN>` 
 * Clone the repo and install:
 
 ```
 git clone git@github.com:openelections/tracker.git
 cd tracker/
-# Install the CLI tool into active python 3.6
 make install
+```
+
+* Create a local [AWS credentials file](http://boto3.readthedocs.io/en/latest/guide/configuration.html#shared-credentials-file) and add a "profile" to it called `openelex`:
+
+> This step is only necessary in order to publish world-readable reports to the openelections-tracker S3 bucket.
+
+```
+# ~/.aws/credentials
+aws_access_key_id = <ACCESS_KEY_ID>
+aws_secret_access_key = <SECRET_ACCESS_KEY>
 ```
 
 ##  Use
@@ -37,6 +43,12 @@ make install
 ```
 # List available actions
 openelex-tracker --help
+
+# Generate a CSV of repos
+openelex-tracker --repos-report 
+
+# Generate a CSV of repos and publish a world-readable file to S3
+openelex-tracker --repos-report --publish
 ```
 
 ## Contribute
