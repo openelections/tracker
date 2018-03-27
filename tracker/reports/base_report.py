@@ -35,13 +35,11 @@ class BaseReport:
     def publish(self, outfile):
         bucket = 'openelections-tracker'
         obj_key  = os.path.basename(outfile)
-        print("Publishing to S3: {}".format(outfile))
+        s3_url = "https://s3.amazonaws.com/{}/{}".format(bucket, obj_key)
         s3 = boto3.resource('s3')
-        extra_args = {'ACL':'public-read'}
-        data = open(outfile, 'rb')
-        s3.Bucket(bucket).put_object(Key=obj_key, Body=data)
-        object_acl = s3.ObjectAcl(bucket, obj_key)
-        object_acl.put(ACL='public-read')
+        obj = s3.Object(bucket, obj_key)
+        obj.upload_file(outfile, ExtraArgs={'ACL':'public-read'})
+        print("Published to {}".format(s3_url))
 
     def _prepare_data(self, data):
         "Customize data in subclasses as necessary"
