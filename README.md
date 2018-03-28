@@ -20,6 +20,8 @@ Metrics on Github activity, repo creation, etc. are also fair game...
 ## Install
 
 * Install Python 3.6 
+* [Create a Github personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+* Add Github access token to `.bashrc` or `.bash_profile`: `OPENELEX_GITHUB_ACCESS_TOKEN=<TOKEN>`
 * Clone the repo and install:
 
 ```
