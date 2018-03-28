@@ -30,9 +30,9 @@ def get_parsed_args():
         action='store_true',
         help='Generate CSV of all OpenElex repos'
     )
-    parser.add_argument('--tickets-report',
+    parser.add_argument('--issues-report',
         action='store_true',
-        help='Generate CSV of OpenElex tickets'
+        help='Generate CSV of OpenElex issues'
     )
     parser.add_argument('--outdir',
         default='/tmp/openelections/tracker',

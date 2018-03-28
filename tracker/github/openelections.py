@@ -25,10 +25,25 @@ class OpenElections:
             repos.append(payload)
         return repos
 
-    def tickets_report(self):
-        tickets = []
+    def issues_report(self):
+        issues = []
+        counter = 0
         for repo in self.repos():
-            pass
+            if counter == 3:
+                break
+            for issue in repo.issues():
+                issues.append({
+                    'repo': repo.name,
+                    'title': issue.title,
+                    'assignee': issue.assignee,
+                    'url': issue.html_url,
+                    'created_date': issue.created_at.strftime("%Y-%m-%d"),
+                    'created_by': issue.user.login,
+                    'creator_gh_page': issue.user.html_url,
+                    'labels': ','.join([label.name for label in issue.labels()]),
+                    #'body': issue.body,
+                })
+        return issues
 
     def repos(self,):
         return [repo for repo in self.openelex.repositories()]
