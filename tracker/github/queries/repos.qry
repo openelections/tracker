@@ -1,0 +1,27 @@
+query Repositories {
+  rateLimit {
+    limit
+    cost
+    remaining
+    resetAt
+  }
+  organization(login: "openelections") {
+    name
+    repositories(first: 100) {
+      totalCount
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      edges {
+        node {
+          name
+          url
+          issues(states: [OPEN]) {
+            totalCount
+          }
+        }
+      }
+    }
+  }
+}

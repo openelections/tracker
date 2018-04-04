@@ -1,0 +1,27 @@
+query RepositoriesNextPage($reposCursor: String) {
+  rateLimit {
+    limit
+    cost
+    remaining
+    resetAt
+  }
+  organization(login: "openelections") {
+    name
+    repositories(first: 100, after: $reposCursor) {
+      totalCount
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      edges {
+        node {
+          name
+          url
+          issues(states: [OPEN]) {
+            totalCount
+          }
+        }
+      }
+    }
+  }
+}
