@@ -13,34 +13,30 @@ class Response:
         return self.raw_data['rateLimit']
 
 
-class Repositories:
+class Issue:
 
     def __init__(self, data):
-        self.data = data['edges']
-        self.page_info = data['pageInfo']
+        self.data = data['node']
+        self.number = self.data['number']
+        self.title = self.data['title']
+        self.url = self.data['url']
+        self.author = self.data['author']['login']
+        self.comments_count = self.data['comments']['totalCount']
 
-    def __iter__(self):
-        for r in self.data:
-            yield Repo(r)
-
-    def __len__(self):
-        return len(self.data)
-
-    def __getitem__(self, key):
-        return Repo(self.data[key])
+    def __repr__(self):
+        return '<Issue {}>'.format(self.number)
 
     @property
-    def count(self):
-        return self.__len__()
+    def created_at(self):
+        return self.data['createdAt']
 
     @property
-    def has_next_page(self):
-        return self.page_info['hasNextPage']
+    def labels(self):
+        return [node['name'] for node in self.data['labels']['nodes']]
 
     @property
-    def end_cursor(self):
-        return self.page_info.get('endCursor')
-
+    def assignees(self):
+        return [node['login'] for node in self.data['assignees']['nodes']]
 
 class Repo:
 
@@ -69,43 +65,62 @@ class Repo:
                 return []
 
 
-class Issues:
+class Connection:
+    """A paged iterable connection-like object intended to wrap the payloadfor working with edges for a GraphQL type.
+
+    Intended to be subclassed and used as a wrapper for connection data containing
+    edges and paging info, as returned by the GraphQL API.
+
+    Subclasses must specify a node_type class variable that will wrap nodes in the list of edges.
+
+    Parameters
+    ----------
+    data: dict
+        Dictionary from a GraphQL connection type
+
+
+    Example
+    --------
+
+    class Repositories(Connection):
+
+        node_type = Repo
+
+    """
+
+    node_type = None
 
     def __init__(self, data):
-        self.data = data['edges']
+        self.edges = data['edges']
         self.page_info = data['pageInfo']
 
     def __iter__(self):
-        for i in self.data:
-            yield Issue(i)
+        for item in self.edges:
+            yield self.node_type(item)
 
     def __len__(self):
-        return len(self.data)
+        return len(self.edges)
 
     def __getitem__(self, key):
-        return Issue(self.data[key])
-
-class Issue:
-
-    def __init__(self, data):
-        self.data = data['node']
-        self.number = self.data['number']
-        self.title = self.data['title']
-        self.url = self.data['url']
-        self.author = self.data['author']['login']
-        self.comments_count = self.data['comments']['totalCount']
-
-    def __repr__(self):
-        return '<Issue {}>'.format(self.number)
+        return self.node_type(self.edges[key])
 
     @property
-    def created_at(self):
-        return self.data['createdAt']
+    def count(self):
+        return self.__len__()
 
     @property
-    def labels(self):
-        return [node['name'] for node in self.data['labels']['nodes']]
+    def has_next_page(self):
+        return self.page_info['hasNextPage']
 
     @property
-    def assignees(self):
-        return [node['login'] for node in self.data['assignees']['nodes']]
+    def end_cursor(self):
+        return self.page_info.get('endCursor')
+
+
+class Repositories(Connection):
+
+    node_type = Repo
+
+class Issues(Connection):
+
+    node_type = Issue
