@@ -43,7 +43,7 @@ class OpenElections:
                 })
         return issues
 
-    def repos(self,):
+    def repos(self):
         query = GraphqlQuery()
         repos = query.run()
         return repos
