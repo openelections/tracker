@@ -29,20 +29,18 @@ class OpenElections:
 
     def issues_report(self):
         issues = []
-        for repo in self.repos:
-            pass
-        #    for issue in repo.issues:
-        #        issues.append({
-        #            'repo': repo.name,
-        #            'title': issue.title,
-        #            'assignee': issue.assignee,
-        #            'url': issue.url,
-        #            'created_date': issue.created_at.strftime("%Y-%m-%d"),
-        #            'created_by': issue.user.login,
-        #            'creator_gh_page': issue.user.html_url,
-        #            'labels': ','.join([label.name for label in issue.labels()]),
-        #            #'body': issue.body,
-        #        })
+        for repo in self.repos():
+            for issue in repo.issues:
+                issues.append({
+                    'repo': repo.name,
+                    'number': issue.number,
+                    'title': issue.title,
+                    'assignee': ','.join(issue.assignees),
+                    'url': issue.url,
+                    'created_date': issue.created_at.strftime("%Y-%m-%d"),
+                    'created_by': issue.author,
+                    'labels': ','.join(issue.labels),
+                })
         return issues
 
     def repos(self,):
