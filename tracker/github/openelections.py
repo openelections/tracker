@@ -17,7 +17,7 @@ class OpenElections:
                 'state': '',
                 'repo_type': '',
                 'name': repo.name,
-                'open_issues': repo.open_issues,
+                'open_issues': repo.open_issues_count,
                 'url': repo.url,
             }
             match = re.search(r'openelections-(sources|data|results)-(\w{2})$', repo.name)
