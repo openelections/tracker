@@ -1,14 +1,18 @@
 import os
 import requests
 
-from .graphql_response import GraphqlResponse
+from .response import Response as GraphqlResponse
 
 
-class GraphqlQuery:
+class BaseQuery:
 
     api_url = 'https://api.github.com/graphql'
-    gql_initial_qry = 'repos'
-    gql_next_qry = 'repos_next_page'
+    gql_initial_qry = None
+    gql_next_qry = None
+
+    def __init__(self):
+        self.session = requests.Session()
+        self.session.headers['Authorization'] = 'Bearer {}'.format(self.gh_access_token)
 
     def run(self):
         raw_response = self.post(self.gql_initial_qry)
@@ -27,9 +31,7 @@ class GraphqlQuery:
 
     def post(self, query_type, variables={}):
         payload = self.prepare_qry(query_type, variables)
-        session = requests.Session()
-        session.headers['Authorization'] = 'Bearer {}'.format(self.gh_access_token)
-        return session.post(self.api_url, json=payload)
+        return self.session.post(self.api_url, json=payload)
 
     def prepare_qry(self, query_type, variables={}):
         payload = {

@@ -1,7 +1,7 @@
 import re
 
 from github3 import GitHub
-from .graphql_query import GraphqlQuery
+from .graphql import ReposQuery
 
 
 class OpenElections:
@@ -44,6 +44,6 @@ class OpenElections:
         return issues
 
     def repos(self):
-        query = GraphqlQuery()
+        query = ReposQuery()
         repos = query.run()
         return repos
