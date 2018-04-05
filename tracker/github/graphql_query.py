@@ -6,17 +6,20 @@ from .graphql_response import GraphqlResponse
 
 class GraphqlQuery:
 
-    def __init__(self):
-        self.api_url = 'https://api.github.com/graphql'
+    api_url = 'https://api.github.com/graphql'
+    gql_initial_qry = 'repos'
+    gql_next_qry = 'repos_next_page'
 
     def run(self):
-        raw_response = self.post('repos')
+        raw_response = self.post(self.gql_initial_qry)
         current_response = GraphqlResponse(raw_response.json())
         repos = []
         repos.extend(current_response.repos)
         while current_response.repos.has_next_page:
-            variables = { 'reposCursor': current_response.repos.end_cursor }
-            raw_response = self.post('repos_next_page', variables)
+            variables = {
+                'reposCursor': current_response.repos.end_cursor
+            }
+            raw_response = self.post(self.gql_next_qry, variables)
             current_response = GraphqlResponse(raw_response.json())
             for repo in current_response.repos:
                 repos.append(repo)
