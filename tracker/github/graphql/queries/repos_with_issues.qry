@@ -1,0 +1,56 @@
+query OpenElexReposWithIssues {
+  rateLimit {
+    limit
+    cost
+    remaining
+    resetAt
+  }
+  organization(login: "openelections") {
+    name
+    repositories(first: 100) {
+      totalCount
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      edges {
+        node {
+          name
+          url
+          issues(states: [OPEN], first: 100) {
+            totalCount
+            pageInfo {
+              endCursor
+              hasNextPage
+            }
+            edges {
+              node {
+                number
+                title
+                url
+                createdAt
+                author {
+                  login
+                  url
+                }
+                assignees(first: 5) {
+                  nodes {
+                    login
+                  }
+                }
+                comments {
+                  totalCount
+                }
+                labels(first: 10) {
+                  nodes {
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
