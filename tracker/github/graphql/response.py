@@ -57,7 +57,7 @@ class Repo:
         except AttributeError:
             # Create issues attribute and memoize
             try:
-                issues = Issues(self.data['issues']['nodes'])
+                issues = Issues(self.data['issues'])
                 self._issues = issues
                 return self._issues
             except KeyError:
@@ -66,7 +66,7 @@ class Repo:
 
 
 class Connection:
-    """A paged iterable connection-like object intended to wrap the payloadfor working with edges for a GraphQL type.
+    """A paged iterable connection-like object intended to wrap the payload for working with edges for a GraphQL type.
 
     Intended to be subclassed and used as a wrapper for connection data containing
     edges and paging info, as returned by the GraphQL API.
