@@ -1,0 +1,128 @@
+interactions:
+- request:
+    body: '{"query": "query Repositories {\n  rateLimit {\n    limit\n    cost\n    remaining\n    resetAt\n  }\n  organization(login:
+      \"openelections\") {\n    name\n    repositories(first: 100) {\n      totalCount\n      pageInfo
+      {\n        endCursor\n        hasNextPage\n      }\n      edges {\n        node
+      {\n          name\n          url\n          issues(states: [OPEN]) {\n            totalCount\n          }\n        }\n      }\n    }\n  }\n}\n",
+      "variables": {}}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['462']
+      Content-Type: [application/json]
+      User-Agent: [python-requests/2.18.4]
+    method: POST
+    uri: https://api.github.com/graphql
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62aYW/bNhCG/0qhz3ZiO8laG+iHNhiwAcOcAcWAbhgKWmZsNZZoSHLctMh/L3Uy
+        pRB95R2P/RDAsfUeHx7vjidK35K1qlWy+JaUqtZ/ZHlWN//s2g83k8lklKSmsl9OR0mpc5UVWbFJ
+        FtfzOX1R6fqd/TGZTaZvxpPr8eT1h8nrxc10cT37J3keJabcqCL7qurMFI3hQuXaXv5hq18t97r4
+        dafT5qfq1V1pPtvPSWN0b6qsNmWmq0ZSm1rtbs2haCCm81GyVxv9e3Fvmh91sb49lJUprdGPV38/
+        pbP507L4+LTc/7Z8v7y9U3+9fWttblX1p/5S31llsqjLg7Zoer1pBvjXQpm1/bqDMxZMO7CLQjdQ
+        h3JnR9jW9b5aXF5usnp7WF2kJr/0Lvb/O0mzqjr8OJPJ8/Pz6Ieh16rarowq1/whX0rwUHM4VLXX
+        acUfxl2Oh7iGQ6xNyAinq/EAv8ABPOePU1Nq/oSgFg9+dQNHv9fpJ5sBh10d4EdfhMfDsfFC+Wlj
+        I9QmrA17dmgOyTHCFM7Yz4xTFmSGDzFsYAADB5a/dk0FGx8fhRTjXj7AgJcDMOQBcTAkH2CY/f96
+        tBNRASEBGEg+wMBFqAKqF0AgOUbAeQhsZCoqGkgeibCPQyA5RmDHwvEpygskxwiM8nDKqzgvHH+C
+        F4o4L5B8wAucynDaIca5OCs8CwMk3NxUD1EhQXKMwIlKNxN5sfYsYJCQRZFnSAdyJjzgomyKtc75
+        i+Aul8+V9rci5Q8J6inJQxDSnSqz+4DM6wV4mDfQmT6qWxN59fcsYJCQ8JJ73YGccTynBjsz8s3I
+        s4A9EgJyv5PGoQMhCxgkpATJezUHQhYwCCdG2rSM61qLRi5H6IJMTOFZkIOQL8pMGhq9HCOw28Y8
+        rlshOUbg5AhNYxOHQHKMwMmONijFd9G9HCNcMYo42djFeYHkGIGdmpm4UtEMSC5HcIlFDbDk8Gns
+        WZCDVOZQproay+ulZ0EOQl41W6k7ejlGYGdHyJkL6KRIPoDALhIPAY0VYCA5ZmBnaBG3EiTHCOyV
+        SKUHT+2tKckxAmfDcGEtjwfPAgbhVCtnhg7PRaXCsxAPkos38q5UNBbkIJTrcnf0cozASVNXfeXR
+        4VnAIJzooMmor9LQ6OUYgZ+s4o2sXY7hHX3GWQ8yso67CSZ5pBvqImolSI4ROE9IXH49iA+qPQsY
+        hB2VWZwvSI4ROBHh8kueG54FDIJ9ketaNQHJD4UXipCB8PGIvLl2M47sr52ZxwAP4KmQBblHqCrk
+        cW0EyTECp5lyvpBTeBYwCA7DY7ZRK34MustDhgDN51HcHdBqkRwj4OfcPoKrX3IKzwIGwe7GESy/
+        zXTrHnmn6eZziG4fyYLcI02N40ej782TVj54WwnELujlcoQuj8UUngU5iIuI+ot0OTwLGIRTG1uv
+        xtULuhnBCJw0JYQqrm8kOUbA7fNqZzYXXoCHvYU0qMcQbD/IA4LcSHKMMA2545b3jS4uf1LrKPeH
+        y9QzLmGvShHwNBHsxyTHq8LOUfneQYFxZuPACQKmIe8lCeFMI8m5mSAbJu7ZOsnlC9H1JeKHOZ4F
+        DML2RfFZuneQK0kuR+jyXHyG71nAIJwEdWbk76B4FuJB5GemDuTMsSnHI7S88vOHXo59gfcR++Ky
+        qW17udoFPNryRXg49oztC8bCw1maMckjEfK44xaSRyI8ilvbtkjH3WB0qSR+E8uzEOmLQkzRVshG
+        HolgX8WPCUqSyxGcM+UP3T0LGISzYZ3MSH3RyzECp0Z0xVV8B+xZkINQbCnxttnLMULAcozl7yw5
+        X5x5hzZkUeRp0gVoXKaQV7O4ekFyvCiNL/6zf8/fAeYXys8NNAAA
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Cache-Control: [no-cache]
+      Content-Encoding: [gzip]
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Sat, 07 Apr 2018 07:26:43 GMT']
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [200 OK]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      X-Accepted-OAuth-Scopes: [repo]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Media-Type: [github.v4; format=json]
+      X-GitHub-Request-Id: ['C866:10EF:79E7E:12DC49:5AC872B3']
+      X-OAuth-Scopes: ['admin:org, admin:org_hook, admin:public_key, admin:repo_hook,
+          notifications, repo, user']
+      X-RateLimit-Limit: ['5000']
+      X-RateLimit-Remaining: ['4991']
+      X-RateLimit-Reset: ['1523087502']
+      X-Runtime-rack: ['0.411463']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"query": "query RepositoriesNextPage($reposCursor: String) {\n  rateLimit
+      {\n    limit\n    cost\n    remaining\n    resetAt\n  }\n  organization(login:
+      \"openelections\") {\n    name\n    repositories(first: 100, after: $reposCursor)
+      {\n      totalCount\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n      edges
+      {\n        node {\n          name\n          url\n          issues(states: [OPEN])
+      {\n            totalCount\n          }\n        }\n      }\n    }\n  }\n}\n",
+      "variables": {"reposCursor": "Y3Vyc29yOnYyOpHOBOCPaQ=="}}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['554']
+      Content-Type: [application/json]
+      User-Agent: [python-requests/2.18.4]
+    method: POST
+    uri: https://api.github.com/graphql
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6WWW0vDMBSA/4rkubUXJ7qCDzoEBXE+iKDiQ2zP2sw2KUmqTul/N4nMMYiw7Lzl
+        0vPly8mt36SimpLim0iq4YZ1TNtK+1s4TtM0IqVQpjGLiISOMs54TYrJdGp6JCjQ56aT5Gl2GqeT
+        OD25T0+K46yY5E9kjIiQNeXsi2omuAVz2oH5/L6Bg3kP/LKF0napgzsplqZMLLQXimkhGSgbooWm
+        7UwM3Epk04j0tIZrvhC2E3g1G6QS0kAfjx5WZT5dzfnjat5fzS/y5CY5PzszzIaqW/jUdyaSFAva
+        KjBuUNV2hGdjJSrT/mcnjBmszWIlBlmCijkY0CBbM1Kjda+KJKmZbobXw1J0yVbMdm2bwJQaPBMb
+        xzHaVWSJFrEEv0gaIKIqrIgj+EWyAJHO7hvU0jiCXyQkI7TFijiCX+QoICMfFCviCH6RkIy8rbAi
+        juAXyQMyIhqsiCP4RXbJiL1o44bta7EJ9yuEnBcq97VYX4aO4Bfx50JLWr5BwLibAP8wu6y9y9mg
+        9p3sJtyvEHIga/SBdAS/iD/l/mdsgb6iHAEv0ol912W9CR0BL8LfsSKOgBcxPyHIZ8wR8CK8w4o4
+        Al6EoU+NI/wv8mJekPEHEOPVuQULAAA=
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit,
+          X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+          X-Poll-Interval']
+      Cache-Control: [no-cache]
+      Content-Encoding: [gzip]
+      Content-Security-Policy: [default-src 'none']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Sat, 07 Apr 2018 07:26:44 GMT']
+      Referrer-Policy: ['origin-when-cross-origin, strict-origin-when-cross-origin']
+      Server: [GitHub.com]
+      Status: [200 OK]
+      Strict-Transport-Security: [max-age=31536000; includeSubdomains; preload]
+      X-Accepted-OAuth-Scopes: [repo]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [deny]
+      X-GitHub-Media-Type: [github.v4; format=json]
+      X-GitHub-Request-Id: ['C866:10EF:79E8C:12DC64:5AC872B3']
+      X-OAuth-Scopes: ['admin:org, admin:org_hook, admin:public_key, admin:repo_hook,
+          notifications, repo, user']
+      X-RateLimit-Limit: ['5000']
+      X-RateLimit-Remaining: ['4990']
+      X-RateLimit-Reset: ['1523087502']
+      X-Runtime-rack: ['0.134084']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
