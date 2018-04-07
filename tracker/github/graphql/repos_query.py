@@ -1,6 +1,3 @@
-import os
-import requests
-
 from .base_query import BaseQuery
 
 
