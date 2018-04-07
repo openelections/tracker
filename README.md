@@ -48,10 +48,12 @@ aws_secret_access_key = <SECRET_ACCESS_KEY>
 openelex-tracker --help
 
 # Generate a CSV of repos
-openelex-tracker --repos-report 
+openelex-tracker --repos-report
+openelex-tracker --issues-report
 
 # Generate a CSV of repos and publish a world-readable file to S3
 openelex-tracker --repos-report --publish
+openelex-tracker --issues-report --publish
 ```
 
 ## Contribute
