@@ -16,7 +16,7 @@ def test_repos_data(caplog, mocker, tmpdir):
         'outdir': tmpdir.strpath,
         'publish': False
     }
-    mock = mocker.patch(
+    mocker.patch(
         'tracker.cli.get_parsed_args',
         return_value=parsed_args,
         autospec=True,
