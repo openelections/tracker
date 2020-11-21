@@ -20,7 +20,7 @@ setup(
     ],
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['github3.py'],
+    install_requires=['boto3','github3.py'],
     entry_points={
         'console_scripts': [
             'openelex-tracker=tracker.cli:main',
