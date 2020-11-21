@@ -16,6 +16,7 @@ class BaseQuery:
 
     def run(self):
         raw_response = self.post(self.gql_initial_qry)
+        raw_response.raise_for_status()
         current_response = GraphqlResponse(raw_response.json())
         repos = []
         repos.extend(current_response.repos)
