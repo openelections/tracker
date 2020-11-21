@@ -5,7 +5,11 @@
 .python-version
 build/
 data/
+dist/
 !data/state_status_2016.csv
 *.png
 *.pstats
 *.dot
+.DS_Store
+.ipynb_checkpoints/
+*.egg-info/
