@@ -9,11 +9,9 @@ pyodbc = "*"
 "github3.py" = "*"
 vcrpy = "*"
 pytest-vcr = "*"
+#jinja = "*"
 
 [dev-packages]
 betamax = "*"
 pytest = "*"
 pytest-mock = "*"
-
-[requires]
-python_version = "3.6"
