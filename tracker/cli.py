@@ -13,6 +13,9 @@ def main():
     publish_status = parsed.pop('publish')
     outdir = parsed.pop('outdir')
     openelex = OpenElections()
+    #if 'inventory' in parsed:
+    #    pass
+    #else:
     for cmd, status in parsed.items():
         if is_report(cmd) and status == True:
             print("Running --{}...".format(cmd.replace('_','-')))
@@ -26,6 +29,12 @@ def get_parsed_args():
         description='Generate raw material for stats on OpenElections.',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
+    """
+    parser.add_argument('--inventory',
+        action='store_true',
+        help='Generate HTML inventory of Github repos'
+    )
+    """
     parser.add_argument('--repos-report',
         action='store_true',
         help='Generate CSV of all OpenElex repos'
